@@ -9,6 +9,7 @@
   <string id="201">Mode</string>
   <string id="202">Ambilight</string>
   <string id="203">Theatre</string>
+  <string id="204">Random Colors</string>
 
   <string id="300">Lights</string>
   <string id="301">Enable</string>
@@ -21,6 +22,10 @@
   <string id="308">Light bulb ID 3</string>
   <string id="309">Group id (0=all lights)</string>
   <string id="310">Ambilight using a group of lights is too slow (but you're welcome to try)</string>
+  <string id="311">Lights configuration</string>
+  <string id="312">Brightness</string>
+  <string id="313">Colours Changing Frequency (in seconds)</string>
+  <string id="314">Random Saturation</string>
 
   <string id="400">Misc settings</string>
   <string id="401">Enable initial flash</string>

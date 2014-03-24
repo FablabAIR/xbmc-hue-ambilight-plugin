@@ -7,6 +7,7 @@ import colorsys
 import os
 import datetime
 import math
+import random
 
 __addon__      = xbmcaddon.Addon()
 __cwd__        = __addon__.getAddonInfo('path')
@@ -119,6 +120,7 @@ class Hue:
     if self.connected:
       if self.settings.misc_initialflash:
         self.flash_lights()
+
 
   def flash_lights(self):
     self.logger.debuglog("class Hue: flashing lights")
@@ -250,6 +252,7 @@ class HSVRatio:
   def __repr__(self):
     return 'h: %s s: %s v: %s ratio: %s' % (self.h, self.s, self.v, self.ratio)
 
+
 class Screenshot:
   def __init__(self, pixels, capture_width, capture_height):
     self.pixels = pixels
@@ -359,6 +362,16 @@ def run():
 
   while not xbmc.abortRequested:
     
+
+
+    if hue.settings.mode == 2: # random color mode
+
+      for light in hue.light:
+        light.set_light2(int(random.random()*65535), hue.settings.rand_saturation, hue.settings.rand_brightness)
+
+      time.sleep(hue.settings.rand_frequency)
+      hue.settings.updateRandomParam()
+
     if hue.settings.mode == 1: # theatre mode
       if player == None:
         logger.debuglog("creating instance of player")

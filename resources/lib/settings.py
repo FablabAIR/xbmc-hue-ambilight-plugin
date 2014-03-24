@@ -18,6 +18,9 @@ class settings():
     self.light2_id             = int(__addon__.getSetting("light2_id"))
     self.light3_id             = int(__addon__.getSetting("light3_id"))
     self.group_id              = int(__addon__.getSetting("group_id"))
+    self.rand_brightness       = int(__addon__.getSetting("brightness"))
+    self.rand_frequency        = float(__addon__.getSetting("random_frequency"))
+    self.rand_saturation       = int(__addon__.getSetting("random_saturation"))
     self.misc_initialflash     = __addon__.getSetting("misc_initialflash") == "true"
     self.misc_disableshort     = __addon__.getSetting("misc_disableshort") == "true"
 
@@ -44,6 +47,12 @@ class settings():
     self.__dict__.update(**kwargs)
     for k, v in kwargs.iteritems():
       self.addon.setSetting(k, v)
+
+  def updateRandomParam(self):
+    self.rand_brightness       = int(__addon__.getSetting("brightness"))
+    self.rand_frequency        = float(__addon__.getSetting("random_frequency"))
+    self.rand_saturation       = int(__addon__.getSetting("random_saturation"))
+    self.mode                  = int(__addon__.getSetting("mode"))
 
   def __repr__(self):
     return 'bridge_ip: %s\n' % self.bridge_ip + \
