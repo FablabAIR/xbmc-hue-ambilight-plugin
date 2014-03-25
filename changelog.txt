@@ -1,3 +1,9 @@
+0.6.3
+ - [add] new functionnality: Random color with frequency, brightness
+ and saturation control 
+ - [fix] bug on a file name
+ 
+
 0.6.2
  - [feature] optionally disable add-on for short movies
  - [feature] Full color support for LightStrips and Bloom Friends of hue

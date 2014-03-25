@@ -9,13 +9,13 @@ import datetime
 import math
 import random
 
-__addon__      = xbmcaddon.Addon()
+__addon__      = xbmcaddon.Addon(id='script.xbmc.hue.ambilight')
 __cwd__        = __addon__.getAddonInfo('path')
 __resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources', 'lib' ) )
 
 sys.path.append (__resource__)
 
-from settings import *
+from settingsAmbilight import *
 from tools import *
 
 try:
